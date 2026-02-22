@@ -1,0 +1,51 @@
+# LangChain ecosystem
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-ollama>=0.2.0
+langchain-community>=0.3.0
+langgraph>=0.2.0
+langchain-qdrant>=0.1.0
+
+# CrewAI
+crewai>=0.80.0
+crewai-tools>=0.15.0
+
+# Security
+nemoguardrails>=0.10.0
+presidio-analyzer>=2.2.0
+presidio-anonymizer>=2.2.0
+spacy>=3.7.0
+
+# Vector DB
+qdrant-client>=1.9.0
+
+# API
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+httpx>=0.27.0
+
+# Config
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+
+# Document processing
+pypdf>=4.0.0
+langchain-text-splitters>=0.3.0
+
+# Redis + checkpointing
+redis>=5.0.0
+langgraph-checkpoint-redis>=0.1.0
+
+# Cost tracking
+tiktoken>=0.7.0
+
+# Evaluation
+ragas>=0.2.0
+datasets>=2.0.0
+
+# Frontend
+streamlit>=1.40.0
+plotly>=5.0.0
+pandas>=2.0.0
+requests>=2.31.0
