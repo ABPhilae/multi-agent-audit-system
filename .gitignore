@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+data/qdrant_storage/
+data/uploads/
+.DS_Store
+*.egg-info/
+.pytest_cache/
+venv/
+.venv/
+*.log
+ollama_models/
