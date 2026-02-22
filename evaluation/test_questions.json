@@ -1,0 +1,45 @@
+{
+    "questions": [
+      {
+        "question": "What is finding HK-2024-001 about?",
+        "ground_truth": "HK-2024-001 concerns trade reconciliation control gaps in the Fixed Income operations."
+      },
+      {
+        "question": "Who is responsible for the AML monitoring finding?",
+        "ground_truth": "The Chief Compliance Officer is responsible for finding HK-2024-007."
+      },
+      {
+        "question": "What is the HKMA regulation referenced for technology risk?",
+        "ground_truth": "HKMA SPM TM-G-1 covers Technology Risk Management."
+      },
+      {
+        "question": "What are the critical findings in the Hong Kong branch?",
+        "ground_truth": "Finding HK-2024-001 (trade reconciliation) is rated Critical severity."
+      },
+      {
+        "question": "Which Singapore finding relates to data retention?",
+        "ground_truth": "SG-2024-011 relates to PDPA data retention non-compliance."
+      },
+      {
+        "question": "What is the deadline for the access control review?",
+        "ground_truth": "The access control review (SG-2024-003) has a deadline of 2026-04-30."
+      },
+      {
+        "question": "What MAS regulation applies to the Singapore findings?",
+        "ground_truth": "MAS TRMG (Technology Risk Management Guidelines) and MAS Notice 626 apply."
+      },
+      {
+        "question": "How many open findings are there across APAC?",
+        "ground_truth": "There are multiple open findings including HK-2024-007, SG-2024-003, SG-2024-011, JP-2024-002."
+      },
+      {
+        "question": "What is the severity of finding SG-2024-003?",
+        "ground_truth": "Finding SG-2024-003 is rated Significant severity."
+      },
+      {
+        "question": "Which finding is most overdue?",
+        "ground_truth": "HK-2024-007 has the earliest deadline (2026-02-28) and is still Open."
+      }
+    ]
+  }
+  
