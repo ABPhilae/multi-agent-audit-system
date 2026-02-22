@@ -1,0 +1,40 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o-mini
+
+rails:
+  input:
+    flows:
+      - check for prompt injection
+      - check for sensitive data input
+      - enforce topic relevance
+
+  output:
+    flows:
+      - check output for pii
+      - check for hallucination
+      - check compliance statement accuracy
+
+  retrieval:
+    flows:
+      - mask pii in retrieved chunks
+
+  # Colang version
+colang_version: '2.x'
+
+# Sensitive data configuration
+config:
+  sensitive_data_detection:
+    input:
+      entities:
+        - PERSON
+        - PHONE_NUMBER
+        - EMAIL_ADDRESS
+        - CREDIT_CARD
+        - IBAN_CODE
+    output:
+      entities:
+        - PERSON
+        - EMAIL_ADDRESS
+        - CREDIT_CARD
