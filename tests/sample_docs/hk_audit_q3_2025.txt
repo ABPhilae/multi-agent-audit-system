@@ -1,0 +1,26 @@
+BNP PARIBAS INTERNAL AUDIT — HONG KONG BRANCH
+Q3 2025 AUDIT FINDINGS REPORT
+Classification: CONFIDENTIAL | Restricted to Internal Audit
+
+FINDING HK-2024-001
+Title: Trade Reconciliation Control Gap
+Severity: Critical | Business Area: Global Markets — Fixed Income
+Owner: Head of Operations | Target Date: 2026-03-15 | Status: In Progress
+Description: Daily reconciliation of OTC derivative trades between the trading
+system and the clearing house is performed manually for >50 trades per day.
+Risk: undetected discrepancies exceeding HKD 5M. Automated controls failed
+during system upgrade in July 2025. No compensating controls in place.
+HKMA Reference: SPM TM-G-1 Section 4.2 (Operational Risk Controls)
+Remediation: Automate reconciliation; implement 4-eyes check for manual entries.
+
+FINDING HK-2024-007
+Title: AML Transaction Monitoring Threshold Review
+Severity: Significant | Business Area: Retail Banking — AML Compliance
+Owner: Chief Compliance Officer | Target Date: 2026-02-28 | Status: Open
+Budget: HKD 2.3M allocated
+Description: Transaction monitoring alert thresholds have not been reviewed since
+Q1 2024. Current thresholds may miss structured transactions below HKD 80,000.
+FATF Recommendation 10 requires annual calibration. 847 alerts suppressed in Q3
+without documented rationale.
+HKMA Reference: AML/CFT Guideline Section 5.3, FATF Rec 10
+Remediation: Engage Compliance to recalibrate thresholds; document all suppression rationale.

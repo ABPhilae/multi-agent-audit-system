@@ -1,0 +1,24 @@
+BNP PARIBAS INTERNAL AUDIT — SINGAPORE BRANCH
+Q3 2025 REGULATORY COMPLIANCE SUMMARY
+Classification: CONFIDENTIAL
+
+FINDING SG-2024-003
+Title: Access Control Annual Review — Trading Platform
+Severity: Significant | Business Area: Technology Risk
+Owner: IT Security Manager | Target Date: 2026-04-30 | Status: In Progress
+Description: Annual access rights review for the trading platform is overdue by
+45 days. 23 user accounts have not been recertified. 4 accounts belong to former
+employees still with active trading system access.
+MAS Reference: Technology Risk Management Guidelines Section 8.1
+Remediation: Immediate suspension of ex-employee accounts; complete recertification
+within 30 days.
+
+FINDING SG-2024-011
+Title: PDPA Data Retention Non-Compliance
+Severity: Moderate | Business Area: Retail Banking — Data Management
+Owner: Data Privacy Officer | Target Date: 2026-06-30 | Status: Open
+Description: Customer onboarding documents retained beyond the 5-year PDPA
+requirement for 1,240 inactive accounts. Documents include KYC materials and
+NRIC copies beyond retention limits.
+MAS Reference: MAS Notice 655, Personal Data Protection Act Section 25
+Remediation: Implement automated purge; data inventory and classification project.

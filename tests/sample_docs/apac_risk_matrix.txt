@@ -1,0 +1,19 @@
+BNP PARIBAS INTERNAL AUDIT — APAC RISK MATRIX Q3 2025
+Classification: CONFIDENTIAL | Board Audit Committee
+
+FINDING JP-2024-002
+Title: JFSA Regulatory Reporting Automation Gap
+Severity: Significant | Business Area: Regulatory Reporting — Tokyo
+Owner: Regulatory Reporting Head | Target Date: 2026-03-31 | Status: Open
+Description: Monthly JFSA reports (Type I Financial Instruments) are generated
+via manual Excel extraction. Risk of data errors and late submission. Two minor
+reporting errors identified in Q2 2025 submissions.
+JFSA Reference: Financial Instruments and Exchange Act Article 193-2
+Remediation: Automate report generation by Q1 2026; implement pre-submission
+review controls.
+
+RISK HEAT MAP SUMMARY
+Critical (17-25): HK-2024-001
+High (10-16):     HK-2024-007, SG-2024-003, JP-2024-002
+Medium (5-9):     SG-2024-011
+Low (1-4):        None identified this quarter
