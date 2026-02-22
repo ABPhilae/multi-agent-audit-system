@@ -1,0 +1,85 @@
+version: '3.9'
+
+services:
+
+  # ── 1. Vector Database ──────────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ['6333:6333']
+    volumes: ['./data/qdrant_storage:/qdrant/storage']
+    restart: unless-stopped
+
+  # ── 2. Redis ─────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports: ['6379:6379']
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
+
+  # ── 3. NeMo Guardrails ───────────────────────────────────────────────
+  guardrails:
+    build:
+      context: .
+      dockerfile: Dockerfile.guardrails
+    ports: ['8080:8080']
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped
+
+  # ── 4. Ollama (local LLM for air-gapped mode) ────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    ports: ['11434:11434']
+    volumes: ['./data/ollama_models:/root/.ollama']
+    restart: unless-stopped
+    # After first startup, run: docker compose exec ollama ollama pull llama3.2
+
+  # ── 5. FastAPI + Supervisor + CrewAI ────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: ['8000:8000']
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - REDIS_URL=redis://redis:6379
+      - GUARDRAILS_URL=http://guardrails:8080
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - USE_LOCAL_MODELS=${USE_LOCAL_MODELS:-false}
+      - LOCAL_MODEL_NAME=${LOCAL_MODEL_NAME:-llama3.2}
+      - USE_GUARDRAILS=${USE_GUARDRAILS:-true}
+    depends_on: [qdrant, redis, guardrails]
+    restart: unless-stopped
+    volumes: ['./src:/app/src']
+
+  # ── 6. RAGAS Evaluation Microservice ────────────────────────────────
+  evaluation:
+    build:
+      context: .
+      dockerfile: Dockerfile.evaluation
+    ports: ['8001:8001']
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_COLLECTION=audit_documents
+    depends_on: [qdrant]
+    restart: unless-stopped
+
+  # ── 7. Streamlit Frontend ────────────────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports: ['8501:8501']
+    environment:
+      - API_URL=http://api:8000
+      - EVAL_URL=http://evaluation:8001
+    depends_on: [api]
+    restart: unless-stopped
+    volumes: ['./frontend:/app/frontend']
